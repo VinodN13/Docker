@@ -10,4 +10,4 @@ jobs:
       - name: Multiline script
         run: |
           ls -la
-          echo "Hey"
+          echo "Hey how r u ? "
