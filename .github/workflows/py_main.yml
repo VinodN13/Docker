@@ -1,18 +1,14 @@
-name: Shell commands
-on: push
+name: Actions workflow
+on: [push]
 
 jobs:
-  run-shell-command:
+  run-github-actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Print a string
-        run: echo "Hello world"
-      - name: Multiline script
-        run: |
-          ls -la
-          echo "Hey"
-      - name: python program
-        run: |
-          import platform
-          print(platform.processor())
-        shell: python
+      - name: Simple JS action
+        id: greet
+        uses: actions/hello-world-javascript-action@v1			
+        with:
+          who-to-greet: Vinod
+      - name: Log freeting time
+        run: echo "${{ steps.greet.outputs.time }}"
