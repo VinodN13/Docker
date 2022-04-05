@@ -11,3 +11,5 @@ jobs:
         run: |
           ls -la
           echo "Hey"
+      - name: print UID
+        run: echo $UID
